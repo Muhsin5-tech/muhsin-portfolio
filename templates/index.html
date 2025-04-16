@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhsin Ali - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Helvetica', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            primary: '#10B981',
+            dark: '#1F2937',
+            light: '#6B7280',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .content-item {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .content-item:hover {
+      transform: translateY(-3px);
+    }
+    .underline-animate:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #10B981;
+      transition: width 0.4s ease;
+    }
+    .underline-animate:hover:after {
+      width: 100%;
+    }
+    .list-item {
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    .list-item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: #10B981;
+      transform: rotate(45deg);
+    }
+    .project-card {
+      position: relative;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .project-card:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .skill-badge {
+      @apply bg-gray-100 text-dark px-3 py-1 rounded-full text-sm;
+      transition: all 0.3s ease;
+    }
+    .skill-badge:hover {
+      @apply bg-primary text-white;
+    }
+    .profile-photo {
+      @apply w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-lg;
+    }
+  </style>
+</head>
+<body class="bg-white text-dark max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
+
+<!-- Header Section with Photo -->
+  <header class="mb-16 md:mb-20 flex items-start gap-6">
+    <!-- Profile Photo -->
+    <img src="/static/muhsin.jpg" alt="Muhsin Ali Abdullahi" 
+         class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-2 border-white shadow-md">
+    
+    <!-- Header Content -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-light mb-2 tracking-tight">Muhsin Ali Abdullahi</h1>
+      <h2 class="text-xl md:text-2xl font-light text-light mb-6 md:mb-10 leading-snug">Full Stack Software Developer</h2>
+      <div class="text-light">
+        <p>+254-711-988237 (Kenya) | +212-60-29195-508 (Morocco)</p>
+        <p>Nairobi, Kenya | Rabat, Morocco</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contents Section -->
+  <section class="mb-16 md:mb-20" id="contents">
+    <h3 class="text-lg md:text-xl font-light text-light mb-8 md:mb-10 tracking-widest">CONTENTS</h3>
+    <div class="grid grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
+      <a href="#about" class="group content-item text-center">
+        <div class="text-4xl md:text-5xl font-light group-hover:text-primary transition-colors">01</div>
+        <div class="text-xs text-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">ABOUT</div>
+      </a>
+      <a href="#education" class="group content-item text-center">
+        <div class="text-4xl md:text-5xl font-light group-hover:text-primary transition-colors">02</div>
+        <div class="text-xs text-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">EDUCATION</div>
+      </a>
+      <a href="#skills" class="group content-item text-center">
+        <div class="text-4xl md:text-5xl font-light group-hover:text-primary transition-colors">03</div>
+        <div class="text-xs text-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">SKILLS</div>
+      </a>
+      <a href="#projects" class="group content-item text-center">
+        <div class="text-4xl md:text-5xl font-light group-hover:text-primary transition-colors">04</div>
+        <div class="text-xs text-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">PROJECTS</div>
+      </a>
+      <a href="#contact" class="group content-item text-center">
+        <div class="text-4xl md:text-5xl font-light group-hover:text-primary transition-colors">05</div>
+        <div class="text-xs text-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-wider">CONTACT</div>
+      </a>
+    </div>
+  </section>
+
+  <hr class="border-gray-200 my-16 md:my-20">
+
+  <!-- About Section -->
+  <section class="mb-16 md:mb-20" id="about">
+    <h3 class="text-lg md:text-xl font-light text-light mb-8 md:mb-10 tracking-widest">ABOUT ME</h3>
+    
+    <div class="flex flex-col lg:flex-row gap-8 md:gap-10">
+      <div class="lg:w-1/3 flex flex-col items-center">
+        <h4 class="text-2xl font-light mb-4 text-center">Who I Am</h4>
+        <p class="text-light mb-3 text-center">Multilingual and tech-savvy aspiring doctor, preparing to begin a Bachelor of Medicine and Surgery at Université Mohammed V. Passionate about merging medicine with technology to improve healthcare delivery, with a long-term goal of specializing in Urology. Eager to contribute innovative, patient-centered solutions in a global medical landscape.
+        </p>
+        <p class="text-light text-center">Currently enhancing my technical skills through intensive training.</p>
+      </div>
+      
+      <div class="lg:w-2/3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h5 class="font-medium mb-4 text-dark uppercase tracking-wider text-sm">Certifications</h5>
+            <ul class="space-y-3">
+              <li class="list-item text-light">French Language - A2 Level</li>
+              <li class="list-item text-light">Moringa School Software Development</li>
+              <li class="list-item text-light">SAT Certificate - Score: 1270</li>
+              <li class="list-item text-light">KCSE - Grade: B+</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h5 class="font-medium mb-4 text-dark uppercase tracking-wider text-sm">Languages</h5>
+            <ul class="space-y-3">
+              <li class="list-item text-light">English</li>
+              <li class="list-item text-light">Swahili</li>
+              <li class="list-item text-light">French</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Enhanced Skills Section with Larger Icons -->
+  <section class="mb-16 md:mb-20" id="skills">
+    <h3 class="text-lg md:text-xl font-light text-light mb-8 md:mb-10 tracking-widest">TECHNICAL SKILLS</h3>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <!-- Python -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#3776AB">
+          <path d="M11.984 0a5.998 5.998 0 0 0-5.998 5.998c0 3.27 2.613 5.84 5.998 5.84h3.84v-1.728H12c-2.41 0-4.32-1.89-4.32-4.32 0-2.41 1.89-4.32 4.32-4.32 2.41 0 4.32 1.89 4.32 4.32v8.64c0 2.41-1.89 4.32-4.32 4.32-2.41 0-4.32-1.89-4.32-4.32v-3.84H5.998v3.84a6.002 6.002 0 0 0 6 6h12a6.002 6.002 0 0 0 6-6V5.998A5.998 5.998 0 0 0 18 0h-6.016z"/>
+        </svg>
+        <span class="text-base">Python</span>
+      </div>
+      
+      <!-- JavaScript -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#F7DF1E">
+          <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+        </svg>
+        <span class="text-base">JavaScript</span>
+      </div>
+      
+      <!-- TypeScript -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#3178C6">
+          <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+        </svg>
+        <span class="text-base">TypeScript</span>
+      </div>
+      
+      <!-- HTML5 -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#E34F26">
+          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+        </svg>
+        <span class="text-base">HTML5</span>
+      </div>
+      
+      <!-- CSS3 -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1572B6">
+          <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>
+        </svg>
+        <span class="text-base">CSS3</span>
+      </div>
+      
+      <!-- React -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#61DAFB">
+          <path d="M12 15.309c-1.784 0-3.231-1.446-3.231-3.23 0-1.784 1.447-3.231 3.231-3.231 1.784 0 3.23 1.447 3.23 3.231 0 1.784-1.446 3.23-3.23 3.23zm0-10.309c-3.896 0-7.054 3.159-7.054 7.054 0 3.896 3.158 7.054 7.054 7.054s7.054-3.158 7.054-7.054c0-3.895-3.158-7.054-7.054-7.054zm5.018 1.975c-.191.191-.191.5 0 .691.191.191.5.191.691 0 .191-.191.191-.5 0-.691-.191-.191-.5-.191-.691 0zm-1.975-.691c-.191-.191-.5-.191-.691 0-.191.191-.191.5 0 .691.191.191.5.191.691 0 .191-.191.191-.5 0-.691zm-6.353 0c-.191-.191-.5-.191-.691 0-.191.191-.191.5 0 .691.191.191.5.191.691 0 .191-.191.191-.5 0-.691z"/>
+        </svg>
+        <span class="text-base">React</span>
+      </div>
+      
+      <!-- Tailwind CSS -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#38B2AC">
+          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.31.74 1.91 1.35.98 1.01 2.16 2.22 4.59 2.22 2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35C15.61 7.52 14.44 6.22 12 6zm-5 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.91 1.35C8.39 16.48 9.56 17.78 12 17.78c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.91-1.35-.98-1.01-2.16-2.22-4.59-2.22z"/>
+        </svg>
+        <span class="text-base">Tailwind CSS</span>
+      </div>
+      
+      <!-- Flask -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-17v8h2V5h-2zm0 10v2h2v-2h-2z"/>
+        </svg>
+        <span class="text-base">Flask</span>
+      </div>
+      
+      <!-- Git -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#F05032">
+          <path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.643-.22 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.883.719-2.602 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.884.721-2.599 0-.72-.719-.72-1.884 0-2.6.177-.177.383-.312.602-.402V8.835c-.217-.09-.424-.224-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187z"/>
+        </svg>
+        <span class="text-base">Git</span>
+      </div>
+      
+      <!-- Responsive Design -->
+      <div class="skill-badge flex items-center gap-3 p-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#3DDC84">
+          <path d="M3 6h18v12H3V6zm2 2v8h14V8H5zm2 0h2v6H7V8zm3 0h2v6h-2V8zm3 0h2v6h-2V8zm3 0h2v6h-2V8z"/>
+        </svg>
+        <span class="text-base">Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+ <!-- Projects Section with GitHub Links -->
+<section class="mb-16 md:mb-20" id="projects">
+    <h3 class="text-lg md:text-xl font-light text-light mb-8 md:mb-10 tracking-widest">PROJECTS</h3>
+    
+    <div class="space-y-12">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+          <div class="md:w-2/3">
+            <h4 class="text-2xl font-light mb-3 underline-animate">Eventify</h4>
+            <p class="text-light mb-4">An event management and ticketing platform where users can create and manage events, and attendees can browse, register, and purchase tickets for events.</p>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">Flask</span>
+              <span class="skill-badge">Tailwind CSS</span>
+            </div>
+            <a href="https://github.com/IrineCKimeto/GROUP-5" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-primary text-sm hover:underline flex items-center gap-1">
+              View on GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+
+    <!-- GitHub Button -->
+    <div class="mt-10 text-center">
+      <a href="https://github.com/Muhsin5-Tech" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-colors">
+        View All Projects on GitHub
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h3 class="text-lg md:text-xl font-light text-light mb-8 md:mb-10 tracking-widest">CONTACT</h3>
+    
+    <div class="flex flex-col md:flex-row gap-8 md:gap-10">
+      <div class="md:w-1/3">
+        <p class="text-light">Available for freelance projects or collaborations.</p>
+      </div>
+      <div class="md:w-2/3">
+        <div class="space-y-4">
+          <p>
+            <span class="font-medium">Email:</span> 
+            <a href="mailto:alimuhsinsurraw@gmail.com" class="text-primary underline-animate">alimuhsinsurraw@gmail.com</a>
+          </p>
+          <p>
+            <span class="font-medium">Phone (Kenya):</span> 
+            <a href="tel:+254711988237" class="text-primary underline-animate">+254 711 988-237</a>
+          </p>
+          <p>
+            <span class="font-medium">Phone (Morocco):</span> 
+            <a href="tel:+212602919508" class="text-primary underline-animate">+212 602 919-508</a>
+          </p>
+          <p>
+            <span class="font-medium">GitHub:</span> 
+            <a href="https://github.com/Muhsin5-Tech" target="_blank" class="text-primary underline-animate">github.com/Muhsin5-Tech</a>
+          </p>
+          <p>
+            <span class="font-medium">LinkedIn:</span> 
+            <a href="https://linkedin.com/in/muhsin-abdullahi" target="_blank" class="text-primary underline-animate">linkedin.com/in/muhsin-abdullahi</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
